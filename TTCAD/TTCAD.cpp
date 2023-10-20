@@ -50,12 +50,16 @@ void Test(size_t n)
     }
 
     vector<Curve_ptr> circles;
-    copy_if(v1.begin(), v1.end(), back_inserter(circles), [](const Curve_ptr& curve) ->bool
+    copy_if(v1.begin(), v1.end(), back_inserter(circles),
+        [](const Curve_ptr& curve) -> bool
         {
             return curve->GetType() == CurveType::CIRCLE;
         });
-    sort(circles.begin(), circles.end(), [](const Curve_ptr& curve1, const Curve_ptr& curve2) {
-        return curve1->GetLength() < curve2->GetLength();
+
+    sort(circles.begin(), circles.end(),
+        [](const Curve_ptr& curve1, const Curve_ptr& curve2) -> bool
+        {
+            return curve1->GetLength() < curve2->GetLength();
         });
     double length = 0;
     for (const auto& curve : circles)
