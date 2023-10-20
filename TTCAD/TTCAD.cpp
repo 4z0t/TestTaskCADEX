@@ -1,7 +1,5 @@
 ﻿#include "TTCAD.h"
-#include "Circle.h"
-#include "Helix.h"
-#include "Ellipse.h"
+#include "Curves.hpp"
 #include <memory>
 #include <algorithm>
 #include <random>
@@ -15,7 +13,7 @@ std::shared_ptr<Curve> RandomCurve(double min_radius, double max_radius)
     using namespace std;
     random_device rd;
     mt19937 gen(rd());
-    uniform_real reals(min_radius, max_radius);
+    uniform_real<> reals(min_radius, max_radius);
 
     int r = rand();
 

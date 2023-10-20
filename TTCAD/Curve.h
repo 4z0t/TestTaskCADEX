@@ -1,7 +1,8 @@
-#pragma once
+#pragma 
+#include "Utility.hpp"
 #include "Vector3.h"
 
-enum class CurveType
+enum class DllExport CurveType
 {
     CIRCLE,
     ELLIPSE,
@@ -10,7 +11,7 @@ enum class CurveType
     TYPES_COUNT
 };
 
-class Curve
+class DllExport Curve
 {
 public:
     using Vec = Vector3<double>;
