@@ -1,5 +1,5 @@
 ﻿#include "TTCAD.h"
-#include "Curves.hpp"
+#include "Curves/Curves.hpp"
 #include <memory>
 #include <algorithm>
 #include <random>
