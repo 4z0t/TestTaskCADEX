@@ -7,7 +7,10 @@ Circle::Circle() :Circle(0)
 
 Circle::Circle(double radius) :m_radius(radius)
 {
-
+    if (m_radius < 0)
+    {
+        throw std::logic_error("Radius of the circle must be positive");
+    }
 }
 
 Curve::Vec Circle::GetTangentAt(double t)const

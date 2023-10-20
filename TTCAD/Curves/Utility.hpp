@@ -4,5 +4,6 @@
 #else
 #define DllExport   __declspec( dllimport )
 #endif
+#include <exception>
 
 

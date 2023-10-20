@@ -7,7 +7,10 @@ Ellipse::Ellipse() :Ellipse(0, 0)
 
 Ellipse::Ellipse(double x_radius, double y_radius) :m_x_radius(x_radius), m_y_radius(y_radius)
 {
-
+    if (x_radius < 0 || y_radius < 0)
+    {
+        throw std::logic_error("Radius of the ellipse must be positive");
+    }
 }
 
 Curve::Vec Ellipse::GetTangentAt(double t)const
