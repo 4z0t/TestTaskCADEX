@@ -36,7 +36,8 @@ std::shared_ptr<Curve> RandomCurve(double min_radius, double max_radius)
 void Test(size_t n)
 {
     using namespace std;
-    vector<shared_ptr<Curve>> v1;
+    using  Curve_ptr = shared_ptr<Curve>;
+    vector<Curve_ptr> v1;
     v1.reserve(n);
     for (size_t i = 0; i < n; i++)
     {
@@ -48,12 +49,12 @@ void Test(size_t n)
         cout << "Point: " << curve->GetPointAt(M_PI_4) << "\tTangent: " << curve->GetTangentAt(M_PI_4) << endl;
     }
 
-    vector<shared_ptr<Curve>> circles;
-    copy_if(v1.begin(), v1.end(), back_inserter(circles), [](const shared_ptr<Curve>& curve) ->bool
+    vector<Curve_ptr> circles;
+    copy_if(v1.begin(), v1.end(), back_inserter(circles), [](const Curve_ptr& curve) ->bool
         {
             return curve->GetType() == CurveType::CIRCLE;
         });
-    sort(circles.begin(), circles.end(), [](const shared_ptr<Curve>& curve1, const shared_ptr<Curve>& curve2) {
+    sort(circles.begin(), circles.end(), [](const Curve_ptr& curve1, const Curve_ptr& curve2) {
         return curve1->GetLength() < curve2->GetLength();
         });
     double length = 0;
