@@ -11,8 +11,7 @@ std::shared_ptr<Curve> RandomCurve(double min_radius, double max_radius)
 {
     const int n_curve_types = static_cast<int>(CurveType::TYPES_COUNT);
     using namespace std;
-    random_device rd;
-    mt19937 gen(rd());
+    mt19937 generator(random_device{}());
     uniform_real<> reals(min_radius, max_radius);
 
     int r = rand();
@@ -20,11 +19,11 @@ std::shared_ptr<Curve> RandomCurve(double min_radius, double max_radius)
     switch (r % n_curve_types)
     {
     case 0:
-        return make_shared<Circle>(reals(gen));
+        return make_shared<Circle>(reals(generator));
     case 1:
-        return make_shared<Helix>(reals(gen));
+        return make_shared<Helix>(reals(generator));
     case 2:
-        return make_shared<Ellipse>(reals(gen), reals(gen));
+        return make_shared<Ellipse>(reals(generator), reals(generator));
     default:
         throw logic_error("Unknown type!");
     }
