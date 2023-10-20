@@ -10,7 +10,6 @@ Ellipse::Ellipse(double x_radius, double y_radius) :m_x_radius(x_radius), m_y_ra
 
 }
 
-
 Curve::Vec Ellipse::GetTangentAt(double t)const
 {
     return { -std::sin(t) * m_x_radius, std::cos(t) * m_y_radius, 1 };
