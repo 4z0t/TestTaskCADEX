@@ -1,3 +1,4 @@
+#pragma once
 #define _USE_MATH_DEFINES
 #include <iostream>
 #include <math.h>
@@ -15,7 +16,7 @@ struct Vector3
 
     friend static std::ostream& operator<<(std::ostream& os, const Vector3& vec)
     {
-        return os << '{' << vec.x << ',' << vec.y << ',' << vec.z << '}';
+        return os << "{ " << vec.x << ", " << vec.y << ", " << vec.z << " }";
     }
 };
 

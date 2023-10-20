@@ -1,3 +1,4 @@
+#pragma once
 #include "Vector3.h"
 
 enum class CurveType
@@ -5,6 +6,8 @@ enum class CurveType
     CIRCLE,
     ELLIPSE,
     HELIX,
+
+    TYPES_COUNT
 };
 
 class Curve

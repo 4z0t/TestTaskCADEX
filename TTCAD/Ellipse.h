@@ -1,3 +1,4 @@
+#pragma once
 #include "Curve.h"
 
 class Ellipse : public Curve
